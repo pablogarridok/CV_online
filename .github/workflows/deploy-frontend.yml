@@ -1,0 +1,53 @@
+name: Deploy Frontend
+
+# Se ejecuta en cada push a main y en cada Pull Request
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-deploy:
+    # Usa una máquina virtual Ubuntu en los servidores de GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descarga el código del repositorio
+      - uses: actions/checkout@v4
+
+      # 2. Instala Node.js 20
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Instala las dependencias
+      - name: Instalar dependencias
+        run: npm install
+        working-directory: frontend
+
+      # 4. Ejecuta los tests automáticos
+      - name: Ejecutar tests
+        run: npm test -- --watchAll=false --passWithNoTests
+        working-directory: frontend
+
+      # 5. Genera el build de producción
+      - name: Build de producción
+        run: npm run build
+        working-directory: frontend
+        env:
+          # URL de la API del backend (configurar en GitHub Settings > Secrets)
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+
+      # 6. Despliega en Vercel (requiere configurar los Secrets en GitHub)
+      # Para activar: Settings > Secrets and variables > Actions > New secret
+      # Necesitas: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID
+      - name: Deploy a Vercel
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: frontend
