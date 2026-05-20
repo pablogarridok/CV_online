@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PI_USER    = 'pi'
+        PI_USER    = 'pablo'
         PI_HOST    = 'host.docker.internal'
         DEPLOY_DIR = '/var/www/html/cv_site'
         SSH_KEY    = '/var/jenkins_home/.ssh/id_ed25519'
