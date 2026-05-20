@@ -21,6 +21,9 @@ pipeline {
         stage('Validar PHP') {
             steps {
                 sh """
+                    # Crear directorio temporal en el host (limpio)
+                    ssh -i ${SSH_KEY} ${SSH_OPTS} ${PI_USER}@${PI_HOST} 'rm -rf /tmp/cv_deploy && mkdir -p /tmp/cv_deploy'
+
                     # Copiar ficheros al host para poder validarlos con PHP
                     scp -i ${SSH_KEY} ${SSH_OPTS} -r backend/ ${PI_USER}@${PI_HOST}:/tmp/cv_deploy/
 
