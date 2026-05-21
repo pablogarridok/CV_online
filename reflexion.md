@@ -1,6 +1,6 @@
 # Reflexión — DevOps 2026: CI/CD con Jenkins, Cloudflare y GitHub Actions
 
-**Autor:** Tu Nombre Apellido  
+**Autor:** Pablo Garrido Rubio  
 **Fecha:** Mayo 2026  
 **Asignatura:** Desenvolupament Web en Entorn Servidor (RA6)
 

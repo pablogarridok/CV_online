@@ -7,23 +7,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(204); exit();
 // MODIFICA ESTOS DATOS CON TU INFORMACIÓN REAL
 // ============================================================
 $cv = [
-    'nombre'      => 'Tu Nombre Apellido',
+    'nombre'      => 'Pablo Garrido Rubio',
     'titulo'      => 'Desarrollador Web Full Stack',
-    'email'       => 'tu@email.com',
-    'telefono'    => '+34 600 000 000',
-    'github'      => 'github.com/tuusuario',
-    'linkedin'    => 'linkedin.com/in/tuusuario',
-    'descripcion' => 'Desarrollador web apasionado por la tecnología y el aprendizaje continuo. Actualmente cursando el ciclo formativo de Desarrollo de Aplicaciones Web en Monlau, con experiencia en proyectos de backend PHP, frontend React y configuración de pipelines CI/CD.',
+    'email'       => 'pablogarrub@campus.monlau.com',
+    'telefono'    => '+34 546 35 64 87',
+    'github'      => 'github.com/pablogarridok',
+    'linkedin'    => 'linkedin.com/in/pablo-garrido-rubio',
+    'descripcion' => 'Desarrollador web de 21 años apasionado por crear aplicaciones modernas y eficientes. Actualmente cursando 2º de DAW en Monlau, donde he aprendido a construir soluciones completas combinando backend PHP con frontends en React. Me motiva especialmente el mundo DevOps y la automatización de despliegues.',
     // ACTIVIDAD 4: Sustituye esta URL por la de ImageKit
     'foto'        => '',
-    'iniciales'   => 'TN',
-    'habilidades' => ['PHP', 'JavaScript', 'React', 'MySQL', 'HTML/CSS', 'Git', 'Docker', 'Linux', 'Jenkins', 'Cloudflare'],
+    'iniciales'   => 'PG',
+    'habilidades' => ['PHP', 'JavaScript', 'React', 'MySQL', 'HTML/CSS', 'Git', 'Docker', 'Linux', 'Jenkins', 'Python'],
     'experiencia' => [
         [
-            'empresa'     => 'Empresa de Prácticas S.L.',
+            'empresa'     => 'Restaurant La Terrassa',
+            'cargo'       => 'Camarero',
+            'periodo'     => 'Junio 2023 – Actualidad',
+            'descripcion' => 'Atención al cliente en sala y terraza. Gestión de comandas y cobros. Trabajo en equipo en entornos de alta demanda.',
+        ],
+        [
+            'empresa'     => 'Pràctiques FCT — Empresa de Desenvolupament',
             'cargo'       => 'Desarrollador Web (Prácticas FCT)',
             'periodo'     => 'Marzo 2026 – Junio 2026',
-            'descripcion' => 'Desarrollo y mantenimiento de aplicaciones web con PHP y MySQL. Implementación de interfaces con JavaScript y React. Participación en reuniones de equipo y revisiones de código.',
+            'descripcion' => 'Desarrollo y mantenimiento de aplicaciones web con PHP y MySQL. Implementación de interfaces con JavaScript y participación en el ciclo completo de despliegue.',
         ],
     ],
     'educacion' => [
@@ -33,20 +39,25 @@ $cv = [
             'periodo'     => '2024 – 2026',
         ],
         [
-            'institucion' => 'IES Ejemplo',
-            'titulo'      => 'Bachillerato Tecnológico',
-            'periodo'     => '2022 – 2024',
+            'institucion' => 'Institut Lluís de Requesens',
+            'titulo'      => 'Bachillerato Científico-Tecnológico',
+            'periodo'     => '2021 – 2023',
         ],
     ],
     'proyectos' => [
         [
             'nombre'      => 'CV Online con Pipeline CI/CD',
-            'descripcion' => 'CV online con despliegue automático mediante Jenkins en Docker. Incluye CDN con Cloudflare, optimización de imágenes con ImageKit y frontend en React desplegado vía GitHub Actions.',
+            'descripcion' => 'CV online desplegado automáticamente con Jenkins en Docker. Cada git push lanza el pipeline: validación PHP, copia a Apache y recarga del servidor. CDN con Cloudflare e imágenes optimizadas con ImageKit.',
             'tech'        => 'PHP · React · Jenkins · Docker · Cloudflare · ImageKit',
         ],
         [
-            'nombre'      => 'API REST con PHP y MySQL',
-            'descripcion' => 'API REST para gestión de datos con autenticación JWT, validación de entradas y documentación Swagger.',
+            'nombre'      => 'TaskFlow — Gestión de Tareas',
+            'descripcion' => 'Aplicación web para gestión de tareas en equipo con sistema de usuarios, prioridades y notificaciones en tiempo real.',
+            'tech'        => 'PHP · MySQL · JavaScript · WebSockets',
+        ],
+        [
+            'nombre'      => 'API REST de Inventario',
+            'descripcion' => 'API REST para gestión de inventario con autenticación JWT y endpoints CRUD completos.',
             'tech'        => 'PHP · MySQL · JWT · Apache',
         ],
     ],

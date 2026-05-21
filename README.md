@@ -139,7 +139,7 @@ El fichero `.github/workflows/deploy-frontend.yml` define el pipeline:
 
 ## Autor
 
-- **Nombre:** Tu Nombre Apellido  
-- **GitHub:** [github.com/tuusuario](https://github.com/tuusuario)  
-- **Email:** tu@email.com  
+- **Nombre:** Pablo Garrido Rubio  
+- **GitHub:** [github.com/pablogarridok](https://github.com/pablogarridok)  
+- **Email:** pablogarrub@campus.monlau.com  
 - **Centro:** Monlau Formació Professional — CFGS DAW 2026
