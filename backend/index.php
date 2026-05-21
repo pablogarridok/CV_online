@@ -197,7 +197,7 @@ $cv = [
 <body>
  
 <header>
-    <div class="avatar">👨‍💻</div>
+    <img class="avatar" src="https://ik.imagekit.io/fotocv/imagen%20(2).jpg" alt="Avatar de Joel Cid Ortega">
     <h1><?= htmlspecialchars($cv['nombre']) ?></h1>
     <p class="tagline">Desarrollador Web · DevOps Junior · <?= $cv['edad'] ?> años · <?= htmlspecialchars($cv['ubicacion']) ?></p>
     <div class="contact-bar">
