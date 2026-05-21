@@ -15,7 +15,7 @@ $cv = [
     'linkedin'    => 'linkedin.com/in/pablo-garrido-rubio',
     'descripcion' => 'Desarrollador web de 21 años apasionado por crear aplicaciones modernas y eficientes. Actualmente cursando 2º de DAW en Monlau, donde he aprendido a construir soluciones completas combinando backend PHP con frontends en React. Me motiva especialmente el mundo DevOps y la automatización de despliegues.',
     // ACTIVIDAD 4: Sustituye esta URL por la de ImageKit
-    'foto'        => '',
+    'foto'        => 'https://ik.imagekit.io/fotocv/WIN_20260521_16_09_29_Pro.jpg',
     'iniciales'   => 'PG',
     'habilidades' => ['PHP', 'JavaScript', 'React', 'MySQL', 'HTML/CSS', 'Git', 'Docker', 'Linux', 'Jenkins', 'Python'],
     'experiencia' => [
