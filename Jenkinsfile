@@ -42,7 +42,7 @@ pipeline {
                         sudo mv /tmp/cv_deploy ${DEPLOY_DIR} &&
                         sudo chown -R www-data:www-data ${DEPLOY_DIR} &&
                         sudo chmod -R 755 ${DEPLOY_DIR} &&
-                        sudo systemctl reload apache2 &&
+                        sudo systemctl restart apache2 &&
                         echo "Despliegue completado en Apache"
                     '
                 """
