@@ -2,60 +2,65 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(204); exit(); }
- 
+
+// ============================================================
+// MODIFICA ESTOS DATOS CON TU INFORMACIÓN REAL
+// ============================================================
 $cv = [
-    "nombre"    => "Joel Cid Ortega",
-    "edad"      => 20,
-    "ubicacion" => "Barcelona, España",
-    "email"     => "joelcid@email.com",
-    "github"    => "github.com/JoelCidOrtega",
-    "sobre_mi"  => "Estudiante de Desarrollo de Aplicaciones Web apasionado por el backend, los sistemas y la automatización. Me gusta construir cosas que funcionen de verdad: desde APIs hasta pipelines CI/CD. Anteriormente formado en electromécanica, lo que me dio una base sólida en resolución de problemas y trabajo técnico.",
-    "educacion" => [
+    'nombre'      => 'Pablo Garrido Rubio',
+    'titulo'      => 'Desarrollador Web Full Stack',
+    'email'       => 'pablogarrub@campus.monlau.com',
+    'telefono'    => '+34 546 35 64 87',
+    'github'      => 'github.com/pablogarridok',
+    'linkedin'    => 'linkedin.com/in/pablo-garrido-rubio',
+    'descripcion' => 'Desarrollador web de 21 años apasionado por crear aplicaciones modernas y eficientes. Actualmente cursando 2º de DAW en Monlau, donde he aprendido a construir soluciones completas combinando backend PHP con frontends en React. Me motiva especialmente el mundo DevOps y la automatización de despliegues.',
+    // ACTIVIDAD 4: Sustituye esta URL por la de ImageKit
+    'foto'        => 'https://ik.imagekit.io/fotocv/WIN_20260521_16_09_29_Pro.jpg',
+    'iniciales'   => 'PG',
+    'habilidades' => ['PHP', 'JavaScript', 'React', 'MySQL', 'HTML/CSS', 'Git', 'Docker', 'Linux', 'Jenkins', 'Python'],
+    'experiencia' => [
         [
-            "titulo"   => "Grado Superior — Desarrollo de Aplicaciones Web (DAW)",
-            "centro"   => "Institut Monlau, Barcelona",
-            "periodo"  => "2024 – 2026 (en curso)",
-            "nota"     => "Especialización en backend, Docker, CI/CD y despliegue de microservicios"
+            'empresa'     => 'Restaurant La Terrassa',
+            'cargo'       => 'Camarero',
+            'periodo'     => 'Junio 2023 – Actualidad',
+            'descripcion' => 'Atención al cliente en sala y terraza. Gestión de comandas y cobros. Trabajo en equipo en entornos de alta demanda.',
         ],
         [
-            "titulo"   => "Grado Medio — Electromecánica de Vehículos",
-            "centro"   => "IES Barcelona",
-            "periodo"  => "2022 – 2024",
-            "nota"     => "Diagnóstico de sistemas eléctricos y mecánicos, mantenimiento preventivo"
-        ]
+            'empresa'     => 'Pràctiques FCT — Empresa de Desenvolupament',
+            'cargo'       => 'Desarrollador Web (Prácticas FCT)',
+            'periodo'     => 'Marzo 2026 – Junio 2026',
+            'descripcion' => 'Desarrollo y mantenimiento de aplicaciones web con PHP y MySQL. Implementación de interfaces con JavaScript y participación en el ciclo completo de despliegue.',
+        ],
     ],
-    "habilidades" => [
-        "Backend"     => ["PHP", "Python", "FastAPI", "Node.js"],
-        "Frontend"    => ["HTML5", "CSS3", "JavaScript", "React"],
-        "DevOps"      => ["Docker", "Jenkins", "GitHub Actions", "Ngrok"],
-        "Bases datos" => ["MySQL", "PostgreSQL", "SQLite"],
-        "Sistemas"    => ["Linux", "Git", "Apache", "Bash"]
-    ],
-    "proyectos" => [
+    'educacion' => [
         [
-            "nombre"      => "Microservicio de Reconocimiento Facial",
-            "descripcion" => "API REST con FastAPI y DeepFace desplegada en Docker con proxy inverso Caddy, HTTPS automático y monitorización con Uptime Kuma.",
-            "tecnologias" => ["Python", "FastAPI", "DeepFace", "Docker", "Caddy"],
-            "github"      => "github.com/JoelCidOrtega/facial_practica"
+            'institucion' => 'Monlau Formació Professional',
+            'titulo'      => 'CFGS Desarrollo de Aplicaciones Web (DAW)',
+            'periodo'     => '2024 – 2026',
         ],
         [
-            "nombre"      => "Pipeline CI/CD con Jenkins",
-            "descripcion" => "Automatización de despliegues en Apache mediante Jenkins en Docker, Webhooks de GitHub y CDN con Cloudflare.",
-            "tecnologias" => ["Jenkins", "Docker", "GitHub Actions", "Cloudflare"],
-            "github"      => "github.com/JoelCidOrtega/facial_practica"
+            'institucion' => 'Institut Lluís de Requesens',
+            'titulo'      => 'Bachillerato Científico-Tecnológico',
+            'periodo'     => '2021 – 2023',
+        ],
+    ],
+    'proyectos' => [
+        [
+            'nombre'      => 'CV Online con Pipeline CI/CD',
+            'descripcion' => 'CV online desplegado automáticamente con Jenkins en Docker. Cada git push lanza el pipeline: validación PHP, copia a Apache y recarga del servidor. CDN con Cloudflare e imágenes optimizadas con ImageKit.',
+            'tech'        => 'PHP · React · Jenkins · Docker · Cloudflare · ImageKit',
         ],
         [
-            "nombre"      => "Plataforma de Reservas Online",
-            "descripcion" => "Aplicación web fullstack para gestión de reservas con autenticación de usuarios, panel de administración y API REST.",
-            "tecnologias" => ["PHP", "MySQL", "JavaScript", "Bootstrap"],
-            "github"      => "github.com/JoelCidOrtega"
-        ]
+            'nombre'      => 'TaskFlow — Gestión de Tareas',
+            'descripcion' => 'Aplicación web para gestión de tareas en equipo con sistema de usuarios, prioridades y notificaciones en tiempo real.',
+            'tech'        => 'PHP · MySQL · JavaScript · WebSockets',
+        ],
+        [
+            'nombre'      => 'API REST de Inventario',
+            'descripcion' => 'API REST para gestión de inventario con autenticación JWT y endpoints CRUD completos.',
+            'tech'        => 'PHP · MySQL · JWT · Apache',
+        ],
     ],
-    "idiomas" => [
-        ["idioma" => "Español",  "nivel" => "Nativo"],
-        ["idioma" => "Catalán",  "nivel" => "Nativo"],
-        ["idioma" => "Inglés",   "nivel" => "B1 — Intermedio"]
-    ]
 ];
 ?>
 <!DOCTYPE html>
@@ -63,216 +68,327 @@ $cv = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joel Cid Ortega — CV</title>
+    <title><?= htmlspecialchars($cv['nombre']) ?> – CV Online</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
- 
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: #edf2f7;
+            color: #2d3748;
+            min-height: 100vh;
         }
- 
-        header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
-            border-bottom: 1px solid #334155;
-            padding: 3rem 2rem;
-            text-align: center;
+
+        .cv-container {
+            display: flex;
+            max-width: 960px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
- 
-        .avatar {
+
+        /* ─── SIDEBAR ─────────────────────────────────────────── */
+        .sidebar {
+            width: 300px;
+            min-width: 300px;
+            background: #1a2332;
+            color: #e8ecf0;
+            padding: 40px 28px;
+        }
+
+        .profile-photo-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: 3px solid #3498db;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            margin: 0 auto 1.5rem;
-            border: 3px solid #3b82f6;
+            background: #2c5282;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
         }
- 
-        h1 { font-size: 2.5rem; color: #f8fafc; margin-bottom: .3rem; }
- 
-        .tagline {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
- 
-        .contact-bar {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
- 
-        .contact-bar a {
-            color: #60a5fa;
-            text-decoration: none;
-            font-size: .9rem;
-        }
- 
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
- 
-        section {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
- 
-        section.full { grid-column: 1 / -1; }
- 
-        h2 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: .1em;
-            color: #3b82f6;
-            margin-bottom: 1rem;
-            padding-bottom: .5rem;
-            border-bottom: 1px solid #334155;
-        }
- 
-        .sobre-mi { color: #cbd5e1; font-size: .95rem; }
- 
-        .edu-item { margin-bottom: 1.2rem; }
-        .edu-item:last-child { margin-bottom: 0; }
-        .edu-titulo { font-weight: 600; color: #f1f5f9; font-size: .95rem; }
-        .edu-centro { color: #60a5fa; font-size: .85rem; }
-        .edu-periodo { color: #64748b; font-size: .8rem; }
-        .edu-nota { color: #94a3b8; font-size: .82rem; margin-top: .25rem; }
- 
-        .skills-group { margin-bottom: .9rem; }
-        .skills-group:last-child { margin-bottom: 0; }
-        .skills-label { font-size: .8rem; color: #64748b; margin-bottom: .4rem; }
-        .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-        .tag {
-            background: #0f172a;
-            border: 1px solid #334155;
-            color: #94a3b8;
-            padding: .2rem .7rem;
-            border-radius: 20px;
-            font-size: .78rem;
-        }
- 
-        .proyecto { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #1e293b; }
-        .proyecto:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-        .proyecto-nombre { font-weight: 600; color: #f1f5f9; margin-bottom: .3rem; }
-        .proyecto-desc { color: #94a3b8; font-size: .85rem; margin-bottom: .5rem; }
-        .proyecto-github { color: #60a5fa; font-size: .8rem; text-decoration: none; }
- 
-        .idioma-item {
-            display: flex;
-            justify-content: space-between;
-            padding: .4rem 0;
-            border-bottom: 1px solid #1e293b;
-            font-size: .9rem;
-        }
-        .idioma-item:last-child { border-bottom: none; }
-        .nivel { color: #64748b; }
- 
-        footer {
+
+        .sidebar-name {
             text-align: center;
-            padding: 1.5rem;
-            color: #475569;
-            font-size: .78rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
         }
- 
-        @media (max-width: 600px) {
-            main { grid-template-columns: 1fr; }
-            section.full { grid-column: 1; }
+
+        .sidebar-title {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #3498db;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 28px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 28px;
+        }
+
+        .sidebar-section-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3498db;
+            border-bottom: 1px solid #2c405e;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.82rem;
+            color: #cbd5e0;
+            word-break: break-all;
+        }
+
+        .contact-icon {
+            font-size: 0.9rem;
+            min-width: 16px;
+            margin-top: 1px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: #2c405e;
+            color: #90cdf4;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* ─── MAIN CONTENT ────────────────────────────────────── */
+        .main-content {
+            flex: 1;
+            padding: 40px 36px;
+            background: #f8fafc;
+        }
+
+        .main-section {
+            margin-bottom: 32px;
+        }
+
+        .main-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+        }
+
+        .about-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 18px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3498db;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .timeline-role {
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin-bottom: 2px;
+        }
+
+        .timeline-period {
+            font-size: 0.75rem;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 0.82rem;
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .project-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+
+        .project-desc {
+            font-size: 0.82rem;
+            color: #718096;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            font-size: 0.72rem;
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+            .cv-container { flex-direction: column; margin: 0; border-radius: 0; }
+            .sidebar { width: 100%; }
         }
     </style>
 </head>
 <body>
- 
-<header>
-    <img class="avatar" src="https://ik.imagekit.io/fotocv/imagen%20(2).jpg" alt="Avatar de Joel Cid Ortega">
-    <h1><?= htmlspecialchars($cv['nombre']) ?></h1>
-    <p class="tagline">Desarrollador Web · DevOps Junior · <?= $cv['edad'] ?> años · <?= htmlspecialchars($cv['ubicacion']) ?></p>
-    <div class="contact-bar">
-        <a href="mailto:<?= $cv['email'] ?>"><?= $cv['email'] ?></a>
-        <a href="https://<?= $cv['github'] ?>" target="_blank"><?= $cv['github'] ?></a>
-    </div>
-</header>
- 
-<main>
- 
-    <section class="full">
-        <h2>Sobre mí</h2>
-        <p class="sobre-mi"><?= htmlspecialchars($cv['sobre_mi']) ?></p>
-    </section>
- 
-    <section>
-        <h2>Educación</h2>
-        <?php foreach ($cv['educacion'] as $edu): ?>
-        <div class="edu-item">
-            <div class="edu-titulo"><?= htmlspecialchars($edu['titulo']) ?></div>
-            <div class="edu-centro"><?= htmlspecialchars($edu['centro']) ?></div>
-            <div class="edu-periodo"><?= $edu['periodo'] ?></div>
-            <div class="edu-nota"><?= htmlspecialchars($edu['nota']) ?></div>
+
+<div class="cv-container">
+
+    <!-- ─── SIDEBAR ──────────────────────────────── -->
+    <aside class="sidebar">
+
+        <div class="profile-photo-wrap">
+            <div class="profile-photo">
+                <?php if (!empty($cv['foto'])): ?>
+                    <img src="<?= htmlspecialchars($cv['foto']) ?>" alt="Foto de perfil">
+                <?php else: ?>
+                    <?= htmlspecialchars($cv['iniciales']) ?>
+                <?php endif; ?>
+            </div>
         </div>
-        <?php endforeach; ?>
-    </section>
- 
-    <section>
-        <h2>Habilidades</h2>
-        <?php foreach ($cv['habilidades'] as $categoria => $skills): ?>
-        <div class="skills-group">
-            <div class="skills-label"><?= $categoria ?></div>
-            <div class="tags">
-                <?php foreach ($skills as $skill): ?>
-                <span class="tag"><?= $skill ?></span>
+
+        <p class="sidebar-name"><?= htmlspecialchars($cv['nombre']) ?></p>
+        <p class="sidebar-title"><?= htmlspecialchars($cv['titulo']) ?></p>
+
+        <div class="sidebar-section">
+            <p class="sidebar-section-title">Contacto</p>
+            <div class="contact-item">
+                <span class="contact-icon">✉</span>
+                <span><?= htmlspecialchars($cv['email']) ?></span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span><?= htmlspecialchars($cv['telefono']) ?></span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">🐙</span>
+                <span><?= htmlspecialchars($cv['github']) ?></span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">💼</span>
+                <span><?= htmlspecialchars($cv['linkedin']) ?></span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <p class="sidebar-section-title">Habilidades</p>
+            <div class="skills-grid">
+                <?php foreach ($cv['habilidades'] as $skill): ?>
+                    <span class="skill-tag"><?= htmlspecialchars($skill) ?></span>
                 <?php endforeach; ?>
             </div>
         </div>
-        <?php endforeach; ?>
-    </section>
- 
-    <section class="full">
-        <h2>Proyectos</h2>
-        <?php foreach ($cv['proyectos'] as $proyecto): ?>
-        <div class="proyecto">
-            <div class="proyecto-nombre"><?= htmlspecialchars($proyecto['nombre']) ?></div>
-            <p class="proyecto-desc"><?= htmlspecialchars($proyecto['descripcion']) ?></p>
-            <div class="tags" style="margin-bottom:.5rem">
-                <?php foreach ($proyecto['tecnologias'] as $tech): ?>
-                <span class="tag"><?= $tech ?></span>
-                <?php endforeach; ?>
+
+    </aside>
+
+    <!-- ─── MAIN CONTENT ─────────────────────────── -->
+    <main class="main-content">
+
+        <section class="main-section">
+            <p class="main-section-title">Sobre mí</p>
+            <p class="about-text"><?= htmlspecialchars($cv['descripcion']) ?></p>
+        </section>
+
+        <section class="main-section">
+            <p class="main-section-title">Experiencia</p>
+            <?php foreach ($cv['experiencia'] as $exp): ?>
+            <div class="timeline-item">
+                <p class="timeline-company"><?= htmlspecialchars($exp['empresa']) ?></p>
+                <p class="timeline-role"><?= htmlspecialchars($exp['cargo']) ?></p>
+                <p class="timeline-period"><?= htmlspecialchars($exp['periodo']) ?></p>
+                <p class="timeline-desc"><?= htmlspecialchars($exp['descripcion']) ?></p>
             </div>
-            <a class="proyecto-github" href="https://<?= $proyecto['github'] ?>" target="_blank">
-                ↗ <?= $proyecto['github'] ?>
-            </a>
-        </div>
-        <?php endforeach; ?>
-    </section>
- 
-    <section>
-        <h2>Idiomas</h2>
-        <?php foreach ($cv['idiomas'] as $item): ?>
-        <div class="idioma-item">
-            <span><?= $item['idioma'] ?></span>
-            <span class="nivel"><?= $item['nivel'] ?></span>
-        </div>
-        <?php endforeach; ?>
-    </section>
- 
-</main>
- 
-<footer>
-    Joel Cid Ortega · <?= date('Y') ?> · Desplegado con Jenkins CI/CD
-</footer>
- 
+            <?php endforeach; ?>
+        </section>
+
+        <section class="main-section">
+            <p class="main-section-title">Educación</p>
+            <?php foreach ($cv['educacion'] as $edu): ?>
+            <div class="timeline-item">
+                <p class="timeline-company"><?= htmlspecialchars($edu['institucion']) ?></p>
+                <p class="timeline-role"><?= htmlspecialchars($edu['titulo']) ?></p>
+                <p class="timeline-period"><?= htmlspecialchars($edu['periodo']) ?></p>
+            </div>
+            <?php endforeach; ?>
+        </section>
+
+        <section class="main-section">
+            <p class="main-section-title">Proyectos</p>
+            <?php foreach ($cv['proyectos'] as $proyecto): ?>
+            <div class="project-card">
+                <p class="project-name"><?= htmlspecialchars($proyecto['nombre']) ?></p>
+                <p class="project-desc"><?= htmlspecialchars($proyecto['descripcion']) ?></p>
+                <p class="project-tech"><?= htmlspecialchars($proyecto['tech']) ?></p>
+            </div>
+            <?php endforeach; ?>
+        </section>
+
+    </main>
+
+</div>
+
 </body>
 </html>
- 
